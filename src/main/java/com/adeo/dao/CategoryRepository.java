@@ -1,7 +1,9 @@
-package com.adeo.dao
+package com.adeo.dao;
 
-import com.adeo.entities.Category
-import org.springframework.data.mongodb.repository.MongoRepository
-import org.springframework.data.repository.Repository
+import com.adeo.entities.Category;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-interface CategoryRepository : MongoRepository<Category, String>
+@RepositoryRestResource
+public interface CategoryRepository extends MongoRepository<Category, String> {
+}
