@@ -25,8 +25,7 @@ public class JWTAuthorisationFilter extends OncePerRequestFilter {
     private static final Logger LOGGER = LogManager.getLogger(JWTAuthorisationFilter.class);
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
-
-        httpServletResponse.addHeader("Allow-Control-Allow-Origin","*");
+        httpServletResponse.addHeader("Access-Control-Allow-Origin","*");
         httpServletResponse.addHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization");
         httpServletResponse.addHeader("Access-Control-Expose-Headers","Allow-Control-Allow-Origin,Allow-Control-Allow-Credentials,Authorization");
         if(httpServletRequest.getRequestURI().equals("/login")){
